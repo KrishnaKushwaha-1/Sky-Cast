@@ -1,0 +1,1187 @@
+/*====================================================
+                SKYCAST WEATHER DASHBOARD
+                    STYLE.CSS
+======================================================*/
+
+
+/*====================================================
+                    1. GOOGLE FONT
+======================================================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+
+/*====================================================
+                    2. CSS RESET
+======================================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    overflow-x:hidden;
+}
+
+
+/*====================================================
+                3. ROOT VARIABLES
+======================================================*/
+
+:root{
+
+    /* Primary Colors */
+
+    --primary:#3B82F6;
+    --primary-dark:#2563EB;
+    --secondary:#38BDF8;
+
+    /* Background */
+
+    --bg:#020617;
+    --bg-light:#0F172A;
+    --bg-card:rgba(255,255,255,.08);
+
+    /* Border */
+
+    --border:rgba(255,255,255,.12);
+
+    /* Text */
+
+    --white:#FFFFFF;
+    --text:#CBD5E1;
+
+    /* Effects */
+
+    --radius:22px;
+    --transition:.35s ease;
+    --shadow:0 15px 40px rgba(0,0,0,.35);
+
+}
+
+
+/*====================================================
+                4. GLOBAL STYLES
+======================================================*/
+
+img{
+
+    display:block;
+
+    max-width:100%;
+
+}
+
+button{
+
+    cursor:pointer;
+
+    border:none;
+
+    outline:none;
+
+    font-family:inherit;
+
+}
+
+input{
+
+    border:none;
+
+    outline:none;
+
+    font-family:inherit;
+
+}
+
+section{
+
+    margin-top:35px;
+
+}
+
+
+/*====================================================
+                5. BODY
+======================================================*/
+
+body{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:40px;
+
+    color:var(--white);
+
+    background:
+
+        radial-gradient(circle at top left,#2563EB 0%,transparent 30%),
+
+        radial-gradient(circle at bottom right,#38BDF8 0%,transparent 30%),
+
+        linear-gradient(135deg,#020617,#0F172A,#1E293B);
+
+}
+
+
+/*====================================================
+                6. MAIN CONTAINER
+======================================================*/
+
+.container{
+
+    width:100%;
+
+    max-width:1280px;
+
+    padding:35px;
+
+    border-radius:28px;
+
+    background:rgba(15,23,42,.65);
+
+    border:1px solid var(--border);
+
+    backdrop-filter:blur(18px);
+
+    box-shadow:var(--shadow);
+
+}
+
+
+/*====================================================
+                7. COMMON CARD STYLE
+======================================================*/
+
+.card{
+
+    background:var(--bg-card);
+
+    border:1px solid var(--border);
+
+    border-radius:var(--radius);
+
+    backdrop-filter:blur(18px);
+
+    box-shadow:0 10px 25px rgba(0,0,0,.20);
+
+    transition:var(--transition);
+
+}
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:var(--primary);
+
+    background:rgba(255,255,255,.12);
+
+    box-shadow:0 20px 40px rgba(59,130,246,.20);
+
+}
+
+
+
+
+
+
+
+
+
+/*====================================================
+                    8. HEADER
+======================================================*/
+
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:35px;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo i{
+    font-size:36px;
+    color:var(--secondary);
+}
+
+.logo h2{
+    font-size:30px;
+    font-weight:700;
+    color:var(--white);
+}
+
+#themeBtn{
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    background:var(--bg-card);
+    color:var(--white);
+    font-size:18px;
+    transition:var(--transition);
+}
+
+#themeBtn:hover{
+    background:var(--primary);
+    transform:rotate(180deg);
+}
+
+
+/*====================================================
+                9. SEARCH SECTION
+======================================================*/
+
+.search-section{
+
+    display:flex;
+    gap:20px;
+    align-items:center;
+    flex-wrap:wrap;
+    margin-bottom:35px;
+
+}
+
+
+/*====================================================
+                SEARCH BOX
+======================================================*/
+
+.search-box{
+
+    flex:1;
+    display:flex;
+    align-items:center;
+    overflow:hidden;
+
+    background:var(--bg-card);
+
+    border:1px solid var(--border);
+
+    border-radius:50px;
+
+}
+
+.search-box input{
+
+    flex:1;
+
+    background:transparent;
+
+    padding:18px 22px;
+
+    color:var(--white);
+
+    font-size:16px;
+
+}
+
+.search-box input::placeholder{
+
+    color:var(--text);
+
+}
+
+.search-box button{
+
+    width:65px;
+
+    height:60px;
+
+    background:var(--primary);
+
+    color:white;
+
+    font-size:18px;
+
+    transition:var(--transition);
+
+}
+
+.search-box button:hover{
+
+    background:var(--primary-dark);
+
+}
+
+
+/*====================================================
+            CURRENT LOCATION BUTTON
+======================================================*/
+
+#locationBtn{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    height:60px;
+
+    padding:0 25px;
+
+    border-radius:50px;
+
+    background:var(--primary);
+
+    color:white;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    transition:var(--transition);
+
+}
+
+#locationBtn:hover{
+
+    background:var(--primary-dark);
+
+}
+
+#locationBtn i{
+
+    font-size:18px;
+
+}
+
+
+/*====================================================
+                10. WEATHER CARD
+======================================================*/
+
+.weather-card{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:40px;
+
+    flex-wrap:wrap;
+
+    padding:40px;
+
+    background:var(--bg-card);
+
+    border:1px solid var(--border);
+
+    border-radius:var(--radius);
+
+    backdrop-filter:blur(18px);
+
+}
+
+
+/*====================================================
+            WEATHER LEFT
+======================================================*/
+
+.weather-left{
+
+    flex:1;
+
+    min-width:280px;
+
+}
+
+.weather-left h2{
+
+    font-size:36px;
+
+    font-weight:700;
+
+    color:var(--white);
+
+    margin-bottom:8px;
+
+}
+
+.weather-left #currentDate{
+
+    font-size:15px;
+
+    color:var(--text);
+
+    margin-bottom:15px;
+
+}
+
+.weather-left h1{
+
+    font-size:82px;
+
+    font-weight:700;
+
+    color:var(--white);
+
+    line-height:1;
+
+    margin:15px 0;
+
+}
+
+.weather-left #condition{
+
+    font-size:22px;
+
+    font-weight:600;
+
+    color:var(--secondary);
+
+    margin-bottom:10px;
+
+}
+
+.weather-left #feelsLike{
+
+    font-size:17px;
+
+    color:var(--text);
+
+}
+
+
+/*====================================================
+            WEATHER RIGHT
+======================================================*/
+
+.weather-right{
+
+    flex:0 0 240px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+
+/*====================================================
+            WEATHER ICON
+======================================================*/
+
+#weatherIcon{
+
+    width:180px;
+
+    height:180px;
+
+    object-fit:contain;
+
+    filter:drop-shadow(0 10px 20px rgba(0,0,0,.35));
+
+    transition:transform .35s ease;
+
+}
+
+#weatherIcon:hover{
+
+    transform:scale(1.08);
+
+}
+
+
+
+
+/*====================================================
+            11. WEATHER HIGHLIGHTS
+======================================================*/
+
+.highlights{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:25px;
+
+    margin:40px 0;
+
+}
+
+
+/*====================================================
+                HIGHLIGHT CARD
+======================================================*/
+
+.highlights .card{
+
+    position:relative;
+
+    min-height:220px;
+
+    padding:30px 25px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    overflow:hidden;
+
+}
+
+
+/* Top Accent */
+
+.highlights .card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:4px;
+
+    background:linear-gradient(90deg,#38BDF8,#3B82F6);
+
+}
+
+
+/* Highlight Icons */
+
+.highlights .card i{
+
+    font-size:42px;
+
+    color:var(--secondary);
+
+    margin-bottom:18px;
+
+}
+
+
+/* Sunrise & Sunset Image */
+
+.small-icon{
+
+    width:58px;
+
+    height:58px;
+
+    object-fit:contain;
+
+    margin-bottom:18px;
+
+}
+
+
+/* Card Heading */
+
+.highlights .card h4{
+
+    font-size:18px;
+
+    font-weight:600;
+
+    color:var(--white);
+
+    margin-bottom:12px;
+
+}
+
+
+/* Card Value */
+
+.highlights .card p{
+
+    font-size:28px;
+
+    font-weight:700;
+
+    color:var(--white);
+
+    line-height:1.2;
+
+}
+
+
+/*====================================================
+                12. RECENT SEARCH
+======================================================*/
+
+.recent-search{
+
+    margin-top:45px;
+
+}
+
+.recent-search h3{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-bottom:20px;
+
+    font-size:22px;
+
+}
+
+.recent-search h3 i{
+
+    color:var(--secondary);
+
+}
+
+
+/* Search Tags */
+
+.recent-list{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:15px;
+
+}
+
+
+/* Individual Tag */
+
+.recent-list button{
+
+    padding:12px 22px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:var(--bg-card);
+
+    border:1px solid var(--border);
+
+    color:var(--white);
+
+    cursor:pointer;
+
+    transition:var(--transition);
+
+}
+
+.recent-list button:hover{
+
+    background:var(--primary);
+
+}
+
+
+/*====================================================
+                13. ERROR BOX
+======================================================*/
+
+.error{
+
+    margin-top:40px;
+
+    text-align:center;
+
+    padding:35px;
+
+    background:#7F1D1D;
+
+    border-radius:20px;
+
+    display:none;
+
+}
+
+.error i{
+
+    font-size:55px;
+
+    margin-bottom:15px;
+
+}
+
+.error h3{
+
+    font-size:28px;
+
+    margin-bottom:10px;
+
+}
+
+.error p{
+
+    color:#FECACA;
+
+}
+
+
+/*====================================================
+                14. LOADER
+======================================================*/
+
+.loader{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(2,6,23,.75);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    backdrop-filter:blur(4px);
+
+    z-index:999;
+
+}
+
+
+/* Spinner */
+
+.spinner{
+
+    width:70px;
+
+    height:70px;
+
+    border:6px solid rgba(255,255,255,.20);
+
+    border-top:6px solid var(--secondary);
+
+    border-radius:50%;
+
+    animation:spin 1s linear infinite;
+
+}
+
+
+/*====================================================
+            HIDE ELEMENTS
+======================================================*/
+
+.hidden{
+
+    display:none;
+
+}
+
+
+
+
+
+
+
+/*====================================================
+                15. ANIMATIONS
+======================================================*/
+
+/* Weather Card Animation */
+
+.weather-card{
+    animation:fadeUp .8s ease;
+}
+
+/* Highlight Cards */
+
+.highlights .card{
+    animation:fadeUp .8s ease;
+}
+
+/* Recent Search */
+
+.recent-search{
+    animation:fadeUp 1s ease;
+}
+
+/* Fade Animation */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* Loader */
+
+@keyframes spin{
+
+    100%{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+
+/*====================================================
+                16. DARK MODE
+======================================================*/
+
+body.dark{
+
+    --bg:#F8FAFC;
+
+    --bg-light:#FFFFFF;
+
+    --bg-card:#FFFFFF;
+
+    --border:#E2E8F0;
+
+    --white:#0F172A;
+
+    --text:#475569;
+
+    background:#F1F5F9;
+
+}
+
+/* Container */
+
+body.dark .container{
+
+    background:#FFFFFF;
+
+    border:1px solid #E2E8F0;
+
+}
+
+/* Cards */
+
+body.dark .card,
+body.dark .weather-card{
+
+    background:#FFFFFF;
+
+    border:1px solid #E2E8F0;
+
+}
+
+/* Search */
+
+body.dark .search-box{
+
+    background:#FFFFFF;
+
+}
+
+body.dark .search-box input{
+
+    color:#0F172A;
+
+}
+
+body.dark .search-box input::placeholder{
+
+    color:#64748B;
+
+}
+
+/* Theme Button */
+
+body.dark #themeBtn{
+
+    background:#EFF6FF;
+
+    color:#2563EB;
+
+}
+
+/* Logo */
+
+body.dark .logo h2{
+
+    color:#0F172A;
+
+}
+
+
+/*====================================================
+                17. RESPONSIVE
+======================================================*/
+
+
+/* Laptop */
+
+@media(max-width:1200px){
+
+    .container{
+
+        padding:30px;
+
+    }
+
+}
+
+
+/* Tablet */
+
+@media(max-width:992px){
+
+    .weather-card{
+
+        flex-direction:column-reverse;
+
+        text-align:center;
+
+    }
+
+    .weather-left{
+
+        width:100%;
+
+    }
+
+    .weather-right{
+
+        width:100%;
+
+    }
+
+    #weatherIcon{
+
+        width:160px;
+
+        height:160px;
+
+    }
+
+    .weather-left h1{
+
+        font-size:70px;
+
+    }
+
+    .highlights{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+
+/* Mobile */
+
+@media(max-width:768px){
+
+    body{
+
+        padding:20px;
+
+    }
+
+    header{
+
+        flex-direction:column;
+
+        gap:20px;
+
+    }
+
+    .search-section{
+
+        flex-direction:column;
+
+    }
+
+    .search-box{
+
+        width:100%;
+
+    }
+
+    #locationBtn{
+
+        width:100%;
+
+        justify-content:center;
+
+    }
+
+    .weather-left h1{
+
+        font-size:60px;
+
+    }
+
+    .weather-left h2{
+
+        font-size:30px;
+
+    }
+
+    #weatherIcon{
+
+        width:140px;
+
+        height:140px;
+
+    }
+
+    .highlights{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+
+/* Small Mobile */
+
+@media(max-width:480px){
+
+    .container{
+
+        padding:20px;
+
+    }
+
+    .weather-card{
+
+        padding:25px;
+
+    }
+
+    .highlights .card{
+
+        min-height:180px;
+
+        padding:22px;
+
+    }
+
+    .highlights .card h4{
+
+        font-size:16px;
+
+    }
+
+    .highlights .card p{
+
+        font-size:24px;
+
+    }
+
+    #weatherIcon{
+
+        width:120px;
+
+        height:120px;
+
+    }
+
+}
+
+
+/*====================================================
+                18. SCROLLBAR
+======================================================*/
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#0F172A;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#3B82F6;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#2563EB;
+
+}
+
+
+
+
+
+
+
+
+.recent-btn{
+
+    padding:12px 22px;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.10);
+
+    color:#fff;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.recent-btn:hover{
+
+    background:#3B82F6;
+
+}

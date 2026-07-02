@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SkyCast | Weather Dashboard</title>
+
+    <!-- Google Font -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <div class="logo">
+
+            <i class="fa-solid fa-cloud-sun"></i>
+
+            <h2>SkyCast</h2>
+
+        </div>
+
+        <button id="themeBtn">
+
+            <i class="fa-solid fa-moon"></i>
+
+        </button>
+
+    </header>
+
+    <!-- ================= SEARCH ================= -->
+
+    <section class="search-section">
+
+        <div class="search-box">
+
+            <input
+                type="text"
+                id="cityInput"
+                placeholder="Search any city..."
+            >
+
+            <button id="searchBtn">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+            </button>
+
+        </div>
+
+        <button id="locationBtn">
+
+            <i class="fa-solid fa-location-crosshairs"></i>
+
+            Current Location
+
+        </button>
+
+    </section>
+
+    <!-- ================= WEATHER CARD ================= -->
+
+    <section class="weather-card">
+
+        <div class="weather-left">
+
+            <h2 id="cityName">Lucknow</h2>
+
+            <p id="currentDate">
+
+                Monday, 2 July 2026
+
+            </p>
+
+            <h1 id="temperature">
+
+                29°C
+
+            </h1>
+
+            <p id="condition">
+
+                Clear Sky
+
+            </p>
+
+            <p id="feelsLike">
+
+                Feels Like 31°C
+
+            </p>
+
+        </div>
+
+        <div class="weather-right">
+
+            <img
+                id="weatherIcon"
+                src="https://openweathermap.org/img/wn/01d@4x.png"
+                alt="Weather Icon">
+
+        </div>
+
+    </section>
+
+    <!-- ================= WEATHER HIGHLIGHTS ================= -->
+
+    <section class="highlights">
+
+        <div class="card">
+
+            <i class="fa-solid fa-droplet"></i>
+
+            <h4>Humidity</h4>
+
+            <p id="humidity">72%</p>
+
+        </div>
+
+        <div class="card">
+
+            <i class="fa-solid fa-wind"></i>
+
+            <h4>Wind</h4>
+
+            <p id="wind">15 km/h</p>
+
+        </div>
+
+        <div class="card">
+
+            <i class="fa-solid fa-gauge-high"></i>
+
+            <h4>Pressure</h4>
+
+            <p id="pressure">1012 hPa</p>
+
+        </div>
+
+        <div class="card">
+
+            <i class="fa-solid fa-eye"></i>
+
+            <h4>Visibility</h4>
+
+            <p id="visibility">8 km</p>
+
+        </div>
+
+        <div class="card">
+
+            <i class="fa-solid fa-sun"></i>
+
+            <h4>UV Index</h4>
+
+            <p id="uvIndex">5</p>
+
+        </div>
+
+        <div class="card">
+
+            <img
+                class="small-icon"
+                src="https://img.icons8.com/color/96/sunrise.png"
+                alt="Sunrise">
+
+            <h4>Sunrise</h4>
+
+            <p id="sunrise">05:35 AM</p>
+
+        </div>
+
+        <div class="card">
+
+            <img
+                class="small-icon"
+                src="https://img.icons8.com/color/96/sunset.png"
+                alt="Sunset">
+
+            <h4>Sunset</h4>
+
+            <p id="sunset">06:58 PM</p>
+
+        </div>
+
+    </section>
+
+    <!-- ================= RECENT SEARCHES ================= -->
+
+    <section class="recent-search">
+
+        <h3>
+
+            <i class="fa-solid fa-clock-rotate-left"></i>
+
+            Recent Searches
+
+        </h3>
+
+        <div
+            id="recentSearches"
+            class="recent-list">
+
+        </div>
+
+    </section>
+
+    <!-- ================= ERROR ================= -->
+
+    <section
+        id="errorBox"
+        class="error hidden">
+
+        <i class="fa-solid fa-circle-exclamation"></i>
+
+        <h3>
+
+            City Not Found
+
+        </h3>
+
+        <p>
+
+            Please enter a valid city name.
+
+        </p>
+
+    </section>
+
+    <!-- ================= LOADER ================= -->
+
+    <div
+        id="loader"
+        class="loader hidden">
+
+        <div class="spinner"></div>
+
+    </div>
+
+</div>
+
+<script src="app.js"></script>
+
+</body>
+
+</html>
